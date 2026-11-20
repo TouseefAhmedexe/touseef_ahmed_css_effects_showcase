@@ -1,0 +1,189 @@
+@layer components {
+    .parallax {
+        background: linear-gradient(160deg, #1a1147, #0b1b3a 55%, #08263a);
+        isolation: isolate;
+        overflow: hidden;
+        padding-block: clamp(6rem, 14vw, 11rem);
+        position: relative;
+    }
+
+    .parallax__layers {
+        inset: 0;
+        position: absolute;
+        z-index: -1;
+    }
+
+    .parallax__layer {
+        --travel: 0rem;
+        inset-block: -16rem;
+        inset-inline: 0;
+        position: absolute;
+    }
+
+    .parallax__layer--far {
+        --travel: 3rem;
+        background-image:
+            radial-gradient(circle at 15% 40%, rgba(167, 139, 250, 0.35) 0 7rem, transparent 7.1rem),
+            radial-gradient(circle at 80% 60%, rgba(34, 211, 238, 0.3) 0 9rem, transparent 9.1rem);
+    }
+
+    .parallax__layer--mid {
+        --travel: 8rem;
+        background-image:
+            radial-gradient(circle at 30% 70%, rgba(249, 168, 212, 0.4) 0 3rem, transparent 3.1rem),
+            radial-gradient(circle at 70% 25%, rgba(167, 139, 250, 0.5) 0 2.2rem, transparent 2.3rem),
+            radial-gradient(circle at 90% 85%, rgba(34, 211, 238, 0.45) 0 2.6rem, transparent 2.7rem);
+    }
+
+    .parallax__layer--near {
+        --travel: 16rem;
+        background-image:
+            radial-gradient(circle at 10% 20%, #ffffff 0 0.35rem, transparent 0.4rem),
+            radial-gradient(circle at 55% 80%, #ffffff 0 0.3rem, transparent 0.35rem),
+            radial-gradient(circle at 88% 35%, #ffffff 0 0.4rem, transparent 0.45rem),
+            radial-gradient(circle at 40% 55%, #ffffff 0 0.25rem, transparent 0.3rem);
+    }
+
+    .parallax__content {
+        max-inline-size: 44rem;
+        text-align: center;
+    }
+
+    .filter {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--space-2);
+        margin-block-end: var(--space-4);
+    }
+
+    .filter__option {
+        cursor: pointer;
+        display: inline-flex;
+    }
+
+    .filter__label {
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius-pill);
+        font-weight: 600;
+        padding: var(--space-2) var(--space-4);
+        transition:
+            background-color var(--duration-fast) var(--ease-out),
+            transform var(--duration-fast) var(--ease-out);
+    }
+
+    .filter__option:hover .filter__label {
+        background-color: var(--color-surface-strong);
+        transform: translateY(-2px);
+    }
+
+    .filter__input:checked + .filter__label {
+        background: var(--gradient-brand);
+        border-color: transparent;
+        color: var(--color-on-accent);
+    }
+
+    .filter__input:focus-visible + .filter__label {
+        outline: 3px solid var(--color-focus);
+        outline-offset: 3px;
+    }
+
+    .filter__status {
+        color: var(--color-muted);
+        font-size: var(--font-size-sm);
+        margin-block-end: var(--space-4);
+    }
+
+    .gallery {
+        display: grid;
+        gap: var(--space-4);
+        grid-template-columns: repeat(auto-fill, minmax(min(100%, 18rem), 1fr));
+    }
+
+    .project__card {
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow-md);
+        overflow: hidden;
+        position: relative;
+        transition:
+            transform var(--duration-base) var(--ease-out),
+            box-shadow var(--duration-base) var(--ease-out);
+    }
+
+    .project__card:hover,
+    .project__card:focus-within {
+        box-shadow: var(--shadow-lg);
+        transform: translateY(-6px);
+    }
+
+    .project__open {
+        background: none;
+        border: 0;
+        cursor: zoom-in;
+        display: block;
+        inline-size: 100%;
+        padding: 0;
+        position: relative;
+    }
+
+    .project__open:focus-visible {
+        outline-offset: -6px;
+    }
+
+    .project__image {
+        aspect-ratio: 3 / 2;
+        background: linear-gradient(135deg, var(--color-surface-strong), var(--color-accent));
+        filter: saturate(0.85);
+        inline-size: 100%;
+        object-fit: cover;
+        transition:
+            transform var(--duration-slow) var(--ease-out),
+            filter var(--duration-base) var(--ease-out);
+    }
+
+    .project__card:hover .project__image,
+    .project__card:focus-within .project__image {
+        filter: saturate(1.15) contrast(1.05);
+        transform: scale(1.08);
+    }
+
+    .project__scrim {
+        background: linear-gradient(to top, rgba(5, 8, 20, 0.94), rgba(5, 8, 20, 0.4) 55%, transparent);
+        inset: 0;
+        pointer-events: none;
+        position: absolute;
+    }
+
+    .project__info {
+        inset-block-end: 0;
+        inset-inline: 0;
+        padding: var(--space-4);
+        pointer-events: none;
+        position: absolute;
+        transition: transform var(--duration-base) var(--ease-out);
+    }
+
+    .project__card:hover .project__info,
+    .project__card:focus-within .project__info {
+        transform: translateY(-0.25rem);
+    }
+
+    .project__category {
+        color: var(--color-accent-2);
+        font-size: var(--font-size-sm);
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        margin: 0;
+        text-transform: uppercase;
+    }
+
+    .project__title {
+        font-size: var(--font-size-xl);
+        margin: 0;
+    }
+
+    .project__text {
+        color: var(--color-text);
+        font-size: var(--font-size-sm);
+        margin: 0;
+    }
+}
