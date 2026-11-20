@@ -11,6 +11,51 @@
 
 <body>
 
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <div class="scroll-progress" aria-hidden="true">
+        <div class="scroll-progress__bar" id="progress-bar"></div>
+    </div>
+
+    <header class="site-header">
+        <div class="site-header__inner container">
+            <a class="brand" href="#top">Aurora Studio</a>
+
+            <input class="nav-toggle visually-hidden" type="checkbox" id="nav-toggle" name="nav_toggle">
+            <label class="nav-button" for="nav-toggle">
+                <span class="visually-hidden">Menu</span>
+                <span class="nav-button__bars" aria-hidden="true"></span>
+            </label>
+
+            <nav class="site-nav" aria-label="Main navigation">
+                <ul class="site-nav__list">
+                    <li><a class="site-nav__link" href="#products">Products</a></li>
+                    <li><a class="site-nav__link" href="#effects">Effects lab</a></li>
+                    <li><a class="site-nav__link" href="#portfolio">Portfolio</a></li>
+                    <li><a class="site-nav__link" href="#faq">FAQ</a></li>
+                    <li class="dropdown" data-requires-js hidden>
+                        <button class="site-nav__link dropdown__button" type="button" aria-expanded="false" aria-controls="category-menu">Projects by category</button>
+                        <ul class="dropdown__menu" id="category-menu">
+                            <li><button class="dropdown__item" type="button" data-filter="all">All projects</button></li>
+                            <li><button class="dropdown__item" type="button" data-filter="web">Web design</button></li>
+                            <li><button class="dropdown__item" type="button" data-filter="branding">Branding</button></li>
+                            <li><button class="dropdown__item" type="button" data-filter="photography">Photography</button></li>
+                            <li><button class="dropdown__item" type="button" data-filter="illustration">Illustration</button></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <noscript>
+        <p class="notice">The filters, dialogs, dropdown and tilt effect need JavaScript. The rest of the page works without it.</p>
+    </noscript>
+
+    <main id="main-content" tabindex="-1">
+
+    </main>
+
 </body>
 
 </html>
