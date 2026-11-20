@@ -1,0 +1,45 @@
+@layer utilities {
+    [hidden] {
+        display: none;
+    }
+}
+
+@layer motion {
+    @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+            animation: none;
+            scroll-behavior: auto;
+            transition: none;
+        }
+
+        .no-scroll-timeline .reveal {
+            opacity: 1;
+            transform: none;
+        }
+
+        .product:hover .product__card,
+        .product:focus-within .product__card,
+        .product:hover .product__image,
+        .product:focus-within .product__image,
+        .project__card:hover,
+        .project__card:focus-within,
+        .project__card:hover .project__image,
+        .project__card:focus-within .project__image,
+        .project__card:hover .project__info,
+        .project__card:focus-within .project__info,
+        .btn:hover,
+        .btn:focus-visible,
+        .filter__option:hover .filter__label {
+            transform: none;
+        }
+
+        @supports (animation-timeline: scroll()) {
+            .scroll-progress__bar {
+                animation: progress-grow linear both;
+                animation-timeline: scroll(root block);
+            }
+        }
+    }
+}
