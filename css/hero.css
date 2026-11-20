@@ -1,0 +1,312 @@
+@layer components {
+    .hero {
+        clip-path: polygon(0 0, 100% 0, 100% calc(100% - 3.5rem), 0 100%);
+        display: grid;
+        isolation: isolate;
+        min-block-size: calc(100vh - var(--header-height));
+        overflow: hidden;
+        padding-block: var(--space-8) calc(var(--space-8) + 3.5rem);
+        place-items: center;
+        position: relative;
+    }
+
+    .hero__background {
+        inset: 0;
+        position: absolute;
+        z-index: -1;
+    }
+
+    .hero__blob {
+        border-radius: 50%;
+        position: absolute;
+    }
+
+    .hero__blob--one {
+        animation: blob-drift 14s ease-in-out infinite alternate;
+        background: radial-gradient(circle at 35% 35%, rgba(167, 139, 250, 0.4), transparent 65%);
+        block-size: 38rem;
+        inline-size: 38rem;
+        inset-block-start: -12rem;
+        inset-inline-start: -10rem;
+    }
+
+    .hero__blob--two {
+        animation: blob-drift 18s ease-in-out -4s infinite alternate-reverse;
+        background: radial-gradient(circle at 40% 40%, rgba(34, 211, 238, 0.3), transparent 65%);
+        block-size: 34rem;
+        inline-size: 34rem;
+        inset-block-end: -14rem;
+        inset-inline-end: -8rem;
+    }
+
+    .hero__blob--three {
+        animation: blob-pulse 10s ease-in-out infinite;
+        background: radial-gradient(circle at 50% 50%, rgba(249, 168, 212, 0.28), transparent 65%);
+        block-size: 22rem;
+        inline-size: 22rem;
+        inset-block-start: 30%;
+        inset-inline-end: 22%;
+    }
+
+    @keyframes blob-drift {
+        0% {
+            transform: translate3d(0, 0, 0) scale(1);
+        }
+
+        50% {
+            transform: translate3d(4rem, 3rem, 0) scale(1.08);
+        }
+
+        100% {
+            transform: translate3d(-2rem, 5rem, 0) scale(0.95);
+        }
+    }
+
+    @keyframes blob-pulse {
+        0%,
+        100% {
+            opacity: 0.6;
+            transform: scale(1);
+        }
+
+        50% {
+            opacity: 1;
+            transform: scale(1.2);
+        }
+    }
+
+    .hero__grid {
+        background-image:
+            linear-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+        background-size: 3rem 3rem;
+        inset: 0;
+        -webkit-mask-image: radial-gradient(ellipse at 50% 40%, #000000 20%, transparent 70%);
+        mask-image: radial-gradient(ellipse at 50% 40%, #000000 20%, transparent 70%);
+        position: absolute;
+    }
+
+    .hero__layer {
+        inset: 0;
+        pointer-events: none;
+        position: absolute;
+    }
+
+    .hero__ring {
+        border: 2px solid rgba(255, 255, 255, 0.22);
+        border-radius: 50%;
+        position: absolute;
+    }
+
+    .hero__ring--one {
+        animation: spin 40s linear infinite;
+        block-size: 22rem;
+        border-style: dashed;
+        inline-size: 22rem;
+        inset-block-start: 8%;
+        inset-inline-end: 6%;
+    }
+
+    .hero__ring--two {
+        animation: spin 25s linear infinite reverse;
+        block-size: 9rem;
+        inline-size: 9rem;
+        inset-block-end: 14%;
+        inset-inline-start: 6%;
+    }
+
+    .hero__shape {
+        position: absolute;
+    }
+
+    .hero__shape--triangle {
+        animation: float 7s ease-in-out infinite;
+        background: linear-gradient(135deg, var(--color-accent-3), var(--color-accent));
+        block-size: 4rem;
+        clip-path: polygon(50% 0, 100% 100%, 0 100%);
+        inline-size: 4.5rem;
+        inset-block-start: 22%;
+        inset-inline-start: 46%;
+    }
+
+    .hero__shape--hexagon {
+        animation: float 9s ease-in-out -2s infinite;
+        background: linear-gradient(135deg, var(--color-accent-2), var(--color-accent));
+        block-size: 5rem;
+        clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0 50%);
+        inline-size: 5.5rem;
+        inset-block-end: 20%;
+        inset-inline-start: 42%;
+    }
+
+    .hero__shape--diamond {
+        animation: float 6s ease-in-out -1s infinite;
+        background: linear-gradient(135deg, var(--color-accent-3), var(--color-accent-2));
+        block-size: 3rem;
+        clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+        inline-size: 3rem;
+        inset-block-start: 14%;
+        inset-inline-end: 38%;
+    }
+
+    .hero__inner {
+        align-items: center;
+        display: grid;
+        gap: var(--space-7);
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    @media (min-width: 56em) {
+        .hero__inner {
+            grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+        }
+    }
+
+    .hero__title {
+        font-size: clamp(2.75rem, 1.5rem + 5.5vw, 5.5rem);
+        margin-block-end: var(--space-4);
+    }
+
+    .hero__word {
+        animation: word-in var(--duration-slow) var(--ease-out) both;
+        display: inline-block;
+        padding-block-end: 0.08em;
+    }
+
+    .hero__word:nth-child(1) {
+        animation-delay: 0.1s;
+    }
+
+    .hero__word:nth-child(2) {
+        animation-delay: 0.22s;
+    }
+
+    .hero__word:nth-child(3) {
+        animation-delay: 0.34s;
+    }
+
+    .hero__word:nth-child(4) {
+        animation-delay: 0.46s;
+    }
+
+    .hero__word:nth-child(5) {
+        animation-delay: 0.58s;
+    }
+
+    @keyframes word-in {
+        from {
+            opacity: 0;
+            transform: translateY(1.2em) rotate(4deg);
+        }
+    }
+
+    .hero__word--gradient {
+        color: var(--color-accent-2);
+    }
+
+    @supports ((-webkit-background-clip: text) or (background-clip: text)) {
+        .hero__word--gradient {
+            animation:
+                word-in var(--duration-slow) var(--ease-out) 0.34s both,
+                gradient-slide 6s linear infinite;
+            background-image: linear-gradient(
+                90deg,
+                var(--color-accent),
+                var(--color-accent-2),
+                var(--color-accent-3),
+                var(--color-accent)
+            );
+            background-size: 200% 100%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+    }
+
+    @keyframes gradient-slide {
+        to {
+            background-position: 200% 0;
+        }
+    }
+
+    .hero__lead {
+        color: var(--color-muted);
+        font-size: var(--font-size-lg);
+        margin-block-end: var(--space-5);
+        max-inline-size: 36rem;
+    }
+
+    .hero__actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--space-3);
+    }
+
+    .hero__visual {
+        aspect-ratio: 1;
+        display: grid;
+        inline-size: min(100%, 28rem);
+        margin-inline: auto;
+        place-items: center;
+        position: relative;
+    }
+
+    .hero__orb {
+        animation: spin 22s linear infinite;
+        background: conic-gradient(
+            from 0deg,
+            var(--color-accent),
+            var(--color-accent-2),
+            var(--color-accent-3),
+            var(--color-accent)
+        );
+        border-radius: 50%;
+        inset: 6%;
+        -webkit-mask-image: radial-gradient(circle, transparent 58%, #000000 59%);
+        mask-image: radial-gradient(circle, transparent 58%, #000000 59%);
+        opacity: 0.85;
+        position: absolute;
+    }
+
+    .hero__image {
+        animation: float 8s ease-in-out infinite;
+        aspect-ratio: 1;
+        background: linear-gradient(135deg, var(--color-surface-strong), var(--color-accent));
+        border-radius: 50%;
+        inline-size: 74%;
+        -webkit-mask-image: radial-gradient(circle, #000000 64%, transparent 72%);
+        mask-image: radial-gradient(circle, #000000 64%, transparent 72%);
+        object-fit: cover;
+        position: relative;
+    }
+
+    .hero__chip {
+        position: absolute;
+    }
+
+    .hero__chip--top {
+        animation:
+            float 6s ease-in-out infinite,
+            sway 9s ease-in-out infinite;
+        animation-composition: add;
+        inset-block-start: 8%;
+        inset-inline-end: 0;
+    }
+
+    .hero__chip--bottom {
+        animation: float 7s ease-in-out -2s infinite;
+        inset-block-end: 8%;
+        inset-inline-start: 0;
+    }
+
+    @keyframes sway {
+        0%,
+        100% {
+            transform: translateX(0);
+        }
+
+        50% {
+            transform: translateX(-0.75rem);
+        }
+    }
+}
