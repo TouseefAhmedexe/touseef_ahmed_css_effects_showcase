@@ -443,7 +443,106 @@
             </div>
         </section>
 
+        <section class="section section--alt" id="faq" aria-labelledby="faq-title">
+            <div class="container container--narrow">
+                <header class="section__header reveal">
+                    <p class="eyebrow">FAQ</p>
+                    <h2 class="section__title" id="faq-title">Questions about this page</h2>
+                </header>
+
+                <div class="accordion reveal" id="accordion">
+                    <div class="accordion__item">
+                        <h3 class="accordion__heading">
+                            <button class="accordion__button" type="button" aria-expanded="false" aria-controls="faq-panel-1">Do the effects work in every browser?</button>
+                        </h3>
+                        <div class="accordion__panel" id="faq-panel-1">
+                            <div class="accordion__content">
+                                <p>Scroll-driven animations, view transitions, backdrop filters and masks are modern features. Each one is checked, and when a browser does not support it, the page shows a simpler version. Every section stays usable.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion__item">
+                        <h3 class="accordion__heading">
+                            <button class="accordion__button" type="button" aria-expanded="false" aria-controls="faq-panel-2">What happens if I prefer reduced motion?</button>
+                        </h3>
+                        <div class="accordion__panel" id="faq-panel-2">
+                            <div class="accordion__content">
+                                <p>The animations, parallax and 3D movement are turned off, and all content stays visible. The scroll progress bar stays, because it shows where you are and is not decoration.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion__item">
+                        <h3 class="accordion__heading">
+                            <button class="accordion__button" type="button" aria-expanded="false" aria-controls="faq-panel-3">Is anything on this page real?</button>
+                        </h3>
+                        <div class="accordion__panel" id="faq-panel-3">
+                            <div class="accordion__content">
+                                <p>No. The products, prices and projects are sample content for a CSS practice project.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion__item">
+                        <h3 class="accordion__heading">
+                            <button class="accordion__button" type="button" aria-expanded="false" aria-controls="faq-panel-4">Which parts use JavaScript?</button>
+                        </h3>
+                        <div class="accordion__panel" id="faq-panel-4">
+                            <div class="accordion__content">
+                                <p>The portfolio filter, the dropdown, the accordion, the quick view and lightbox dialogs, the mouse tilt on product cards, the flip tile, and the fallbacks for browsers without scroll-driven animations. Everything else is CSS.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </main>
+
+    <footer class="site-footer">
+        <div class="container site-footer__inner">
+            <p class="site-footer__brand">Aurora Studio</p>
+            <p class="site-footer__text">A sample project for the Bloomrix internship. All products, prices and projects are sample content.</p>
+            <p><a href="#top">Back to top</a></p>
+            <p><small>&copy; 2026 Touseef Ahmed</small></p>
+        </div>
+    </footer>
+
+    <dialog class="modal" id="quick-view" aria-labelledby="quick-view-title">
+        <div class="modal__box">
+            <div class="modal__media" id="quick-view-media"></div>
+
+            <div>
+                <h2 class="modal__title" id="quick-view-title"></h2>
+                <p class="modal__price" id="quick-view-price"></p>
+                <p id="quick-view-text"></p>
+                <ul class="modal__features" id="quick-view-features"></ul>
+            </div>
+
+            <div class="modal__actions">
+                <button class="btn btn--primary" type="button" data-close>Close</button>
+            </div>
+        </div>
+    </dialog>
+
+    <dialog class="lightbox" id="lightbox" aria-labelledby="lightbox-title">
+        <figure class="lightbox__figure">
+            <div class="lightbox__media" id="lightbox-media"></div>
+            <figcaption class="lightbox__caption">
+                <p class="eyebrow" id="lightbox-category"></p>
+                <h2 class="lightbox__title" id="lightbox-title"></h2>
+                <p class="lightbox__text" id="lightbox-text"></p>
+            </figcaption>
+        </figure>
+
+        <div class="lightbox__controls">
+            <button class="btn btn--glass" type="button" id="lightbox-prev">Previous</button>
+            <p class="lightbox__counter" id="lightbox-counter" role="status"></p>
+            <button class="btn btn--glass" type="button" id="lightbox-next">Next</button>
+            <button class="btn btn--primary" type="button" id="lightbox-close">Close</button>
+        </div>
+    </dialog>
 
 </body>
 
