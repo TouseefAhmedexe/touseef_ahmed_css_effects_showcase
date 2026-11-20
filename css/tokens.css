@@ -1,0 +1,61 @@
+@layer reset, tokens, base, layout, components, effects, utilities, motion;
+
+@layer tokens {
+    :root {
+        color-scheme: dark;
+
+        --color-bg: #0b1020;
+        --color-bg-alt: #0f1630;
+        --color-surface: #141c3a;
+        --color-surface-strong: #1b2550;
+        --color-text: #eef2ff;
+        --color-muted: #c3cae6;
+        --color-border: rgba(255, 255, 255, 0.2);
+        --color-accent: #a78bfa;
+        --color-accent-2: #22d3ee;
+        --color-accent-3: #f9a8d4;
+        --color-on-accent: #0b1020;
+        --color-link: #a5b4fc;
+        --color-link-hover: #e0e7ff;
+        --color-focus: #fde047;
+        --gradient-brand: linear-gradient(
+            120deg,
+            var(--color-accent),
+            var(--color-accent-2) 55%,
+            var(--color-accent-3)
+        );
+
+        --font-body: "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+        --font-size-sm: 0.875rem;
+        --font-size-md: 1rem;
+        --font-size-lg: 1.125rem;
+        --font-size-xl: 1.375rem;
+
+        --space-1: 0.25rem;
+        --space-2: 0.5rem;
+        --space-3: 0.75rem;
+        --space-4: 1rem;
+        --space-5: 1.5rem;
+        --space-6: 2rem;
+        --space-7: 3rem;
+        --space-8: 4rem;
+
+        --radius-sm: 0.5rem;
+        --radius-md: 1rem;
+        --radius-lg: 1.5rem;
+        --radius-pill: 999px;
+
+        --shadow-md: 0 12px 30px rgba(0, 0, 0, 0.35);
+        --shadow-lg: 0 24px 60px rgba(0, 0, 0, 0.5);
+
+        --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+        --duration-fast: 200ms;
+        --duration-base: 350ms;
+        --duration-slow: 700ms;
+
+        --header-height: 4.25rem;
+        --z-header: 50;
+        --z-progress: 60;
+        --z-dropdown: 70;
+    }
+}
