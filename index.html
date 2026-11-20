@@ -306,6 +306,143 @@
             </div>
         </section>
 
+        <section class="parallax" aria-labelledby="parallax-title">
+            <div class="parallax__layers" aria-hidden="true">
+                <span class="parallax__layer parallax__layer--far"></span>
+                <span class="parallax__layer parallax__layer--mid"></span>
+                <span class="parallax__layer parallax__layer--near"></span>
+            </div>
+
+            <div class="container parallax__content reveal">
+                <p class="eyebrow">Parallax</p>
+                <h2 id="parallax-title">Layers that move at different speeds</h2>
+                <p>Scroll past this band. The far layer moves slowly, the middle layer a little faster and the near layer fastest. In a browser without scroll-driven animations the layers stay still.</p>
+            </div>
+        </section>
+
+        <section class="section" id="portfolio" aria-labelledby="portfolio-title">
+            <div class="container">
+                <header class="section__header reveal">
+                    <p class="eyebrow">Portfolio</p>
+                    <h2 class="section__title" id="portfolio-title" tabindex="-1">Selected projects</h2>
+                    <p>Filter the sample projects by category, then open any image in the lightbox. All projects are sample content.</p>
+                </header>
+
+                <fieldset class="filter" data-requires-js hidden>
+                    <legend class="visually-hidden">Filter projects by category</legend>
+
+                    <label class="filter__option">
+                        <input class="filter__input visually-hidden" type="radio" name="category" value="all" checked>
+                        <span class="filter__label">All</span>
+                    </label>
+                    <label class="filter__option">
+                        <input class="filter__input visually-hidden" type="radio" name="category" value="web">
+                        <span class="filter__label">Web design</span>
+                    </label>
+                    <label class="filter__option">
+                        <input class="filter__input visually-hidden" type="radio" name="category" value="branding">
+                        <span class="filter__label">Branding</span>
+                    </label>
+                    <label class="filter__option">
+                        <input class="filter__input visually-hidden" type="radio" name="category" value="photography">
+                        <span class="filter__label">Photography</span>
+                    </label>
+                    <label class="filter__option">
+                        <input class="filter__input visually-hidden" type="radio" name="category" value="illustration">
+                        <span class="filter__label">Illustration</span>
+                    </label>
+                </fieldset>
+
+                <p class="filter__status" id="filter-status" role="status"></p>
+
+                <ul class="gallery" id="gallery">
+                    <li class="project" data-category="web">
+                        <article class="project__card">
+                            <button class="project__open" type="button" aria-label="Open Roastery Online in the lightbox">
+                                <img class="project__image" src="images/project-1.jpg" alt="A website layout for a coffee roaster on a laptop" width="1200" height="800">
+                                <span class="project__scrim" aria-hidden="true"></span>
+                            </button>
+                            <div class="project__info">
+                                <p class="project__category">Web design</p>
+                                <h3 class="project__title">Roastery Online</h3>
+                                <p class="project__text">A fast, image-led shop layout for a small coffee roaster.</p>
+                            </div>
+                        </article>
+                    </li>
+
+                    <li class="project" data-category="branding">
+                        <article class="project__card">
+                            <button class="project__open" type="button" aria-label="Open Harbor Studio Identity in the lightbox">
+                                <img class="project__image" src="images/project-2.jpg" alt="Brand identity materials for a design studio" width="1200" height="800">
+                                <span class="project__scrim" aria-hidden="true"></span>
+                            </button>
+                            <div class="project__info">
+                                <p class="project__category">Branding</p>
+                                <h3 class="project__title">Harbor Studio Identity</h3>
+                                <p class="project__text">Logo, colors and type for a design studio.</p>
+                            </div>
+                        </article>
+                    </li>
+
+                    <li class="project" data-category="photography">
+                        <article class="project__card">
+                            <button class="project__open" type="button" aria-label="Open City at Dusk in the lightbox">
+                                <img class="project__image" src="images/project-3.jpg" alt="A city skyline at dusk" width="1200" height="800">
+                                <span class="project__scrim" aria-hidden="true"></span>
+                            </button>
+                            <div class="project__info">
+                                <p class="project__category">Photography</p>
+                                <h3 class="project__title">City at Dusk</h3>
+                                <p class="project__text">A photo series about evening light in the city.</p>
+                            </div>
+                        </article>
+                    </li>
+
+                    <li class="project" data-category="illustration">
+                        <article class="project__card">
+                            <button class="project__open" type="button" aria-label="Open Paper Garden in the lightbox">
+                                <img class="project__image" src="images/project-4.jpg" alt="A layered paper-style illustration of a garden" width="1200" height="800">
+                                <span class="project__scrim" aria-hidden="true"></span>
+                            </button>
+                            <div class="project__info">
+                                <p class="project__category">Illustration</p>
+                                <h3 class="project__title">Paper Garden</h3>
+                                <p class="project__text">Layered paper-style illustrations for a children's book.</p>
+                            </div>
+                        </article>
+                    </li>
+
+                    <li class="project" data-category="web">
+                        <article class="project__card">
+                            <button class="project__open" type="button" aria-label="Open Travel Journal in the lightbox">
+                                <img class="project__image" src="images/project-5.jpg" alt="A travel journal page with a map and photos" width="1200" height="800">
+                                <span class="project__scrim" aria-hidden="true"></span>
+                            </button>
+                            <div class="project__info">
+                                <p class="project__category">Web design</p>
+                                <h3 class="project__title">Travel Journal</h3>
+                                <p class="project__text">A responsive journal with a map and a timeline.</p>
+                            </div>
+                        </article>
+                    </li>
+
+                    <li class="project" data-category="branding">
+                        <article class="project__card">
+                            <button class="project__open" type="button" aria-label="Open Fresh Bowl Packaging in the lightbox">
+                                <img class="project__image" src="images/project-6.jpg" alt="Colorful packaging for a salad bar" width="1200" height="800">
+                                <span class="project__scrim" aria-hidden="true"></span>
+                            </button>
+                            <div class="project__info">
+                                <p class="project__category">Branding</p>
+                                <h3 class="project__title">Fresh Bowl Packaging</h3>
+                                <p class="project__text">A packaging system for a salad bar.</p>
+                            </div>
+                        </article>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
     </main>
 
 </body>
