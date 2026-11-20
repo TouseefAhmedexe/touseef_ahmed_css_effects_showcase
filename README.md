@@ -75,4 +75,4 @@ last, so the reduced motion rules win over everything.
 
 ## How to run
 Open the folder in Visual Studio Code and use Live Server. Modules do not work when index.html is
-opened by double-clicking it.
+opened by double-clicking it
