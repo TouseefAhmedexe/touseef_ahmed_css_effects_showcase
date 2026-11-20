@@ -1,0 +1,174 @@
+@layer effects {
+    .scroll-progress {
+        block-size: 4px;
+        inset-block-start: 0;
+        inset-inline: 0;
+        pointer-events: none;
+        position: fixed;
+        z-index: var(--z-progress);
+    }
+
+    .scroll-progress__bar {
+        background: var(--gradient-brand);
+        block-size: 100%;
+        transform: scaleX(0);
+        transform-origin: 0 50%;
+    }
+
+    @keyframes progress-grow {
+        from {
+            transform: scaleX(0);
+        }
+
+        to {
+            transform: scaleX(1);
+        }
+    }
+
+    @keyframes reveal-up {
+        from {
+            opacity: 0;
+            transform: translateY(2.5rem);
+        }
+
+        to {
+            opacity: 1;
+            transform: none;
+        }
+    }
+
+    @keyframes layer-up {
+        from {
+            transform: translateY(0);
+        }
+
+        to {
+            transform: translateY(var(--travel));
+        }
+    }
+
+    @keyframes layer-shift {
+        from {
+            transform: translateY(calc(var(--travel) * -1));
+        }
+
+        to {
+            transform: translateY(var(--travel));
+        }
+    }
+
+    @supports (animation-timeline: scroll()) {
+        .scroll-progress__bar {
+            animation: progress-grow linear both;
+            animation-timeline: scroll(root block);
+        }
+    }
+
+    @supports (animation-timeline: view()) {
+        .reveal {
+            animation: reveal-up linear both;
+            animation-range: entry 0% entry 55%;
+            animation-timeline: view();
+        }
+
+        .product:nth-child(2) {
+            animation-range: entry 6% entry 61%;
+        }
+
+        .product:nth-child(3) {
+            animation-range: entry 12% entry 67%;
+        }
+
+        .product:nth-child(4) {
+            animation-range: entry 18% entry 73%;
+        }
+
+        .hero__layer {
+            animation: layer-up linear both;
+            animation-range: 0px 100vh;
+            animation-timeline: scroll(root block);
+            will-change: transform;
+        }
+
+        .hero__layer--slow {
+            --travel: -4rem;
+        }
+
+        .hero__layer--fast {
+            --travel: -12rem;
+        }
+
+        .parallax__layer {
+            animation: layer-shift linear both;
+            animation-range: cover;
+            animation-timeline: view();
+            will-change: transform;
+        }
+    }
+
+    .no-scroll-timeline .scroll-progress__bar {
+        transform: scaleX(var(--progress, 0));
+    }
+
+    .no-scroll-timeline .reveal {
+        opacity: 0;
+        transform: translateY(2.5rem);
+        transition:
+            opacity var(--duration-slow) var(--ease-out),
+            transform var(--duration-slow) var(--ease-out);
+    }
+
+    .no-scroll-timeline .reveal.is-visible {
+        opacity: 1;
+        transform: none;
+    }
+
+    .section:target .section__title::after {
+        animation: underline-pop var(--duration-slow) var(--ease-out) both;
+    }
+
+    @keyframes underline-pop {
+        from {
+            transform: scaleX(0.2);
+        }
+
+        to {
+            transform: scaleX(1);
+        }
+    }
+
+    ::view-transition-old(root),
+    ::view-transition-new(root) {
+        animation: none;
+        mix-blend-mode: normal;
+    }
+
+    ::view-transition-group(*) {
+        animation-duration: 0.5s;
+        animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .project:nth-child(1) {
+        view-transition-name: project-1;
+    }
+
+    .project:nth-child(2) {
+        view-transition-name: project-2;
+    }
+
+    .project:nth-child(3) {
+        view-transition-name: project-3;
+    }
+
+    .project:nth-child(4) {
+        view-transition-name: project-4;
+    }
+
+    .project:nth-child(5) {
+        view-transition-name: project-5;
+    }
+
+    .project:nth-child(6) {
+        view-transition-name: project-6;
+    }
+}
