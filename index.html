@@ -200,6 +200,112 @@
             </div>
         </section>
 
+        <section class="section section--alt" id="effects" aria-labelledby="effects-title">
+            <div class="container">
+                <header class="section__header reveal">
+                    <p class="eyebrow">Effects lab</p>
+                    <h2 class="section__title" id="effects-title">Visual effects, one by one</h2>
+                    <p>Each tile shows one CSS effect and names the properties behind it. Only the mask tile uses an image.</p>
+                </header>
+
+                <ul class="effect-grid">
+                    <li class="effect reveal">
+                        <div class="effect__demo demo-glass" aria-hidden="true">
+                            <div class="glass-card demo-glass__panel">
+                                <p class="glass-card__title">Glass panel</p>
+                                <p class="glass-card__text">Blurs what is behind it</p>
+                            </div>
+                        </div>
+                        <h3 class="effect__title">Glassmorphism</h3>
+                        <p class="effect__text"><code>backdrop-filter</code> blurs the colorful dots behind a see-through panel. A browser without support shows a more solid panel instead.</p>
+                    </li>
+
+                    <li class="effect reveal">
+                        <div class="effect__demo demo-gradient" aria-hidden="true">
+                            <p class="demo-gradient__text">Aurora</p>
+                            <div class="animated-gradient"></div>
+                        </div>
+                        <h3 class="effect__title">Gradient text and animated gradients</h3>
+                        <p class="effect__text"><code>background-clip: text</code> shows a gradient through the letters. The bar moves a wide gradient with <code>transform</code>, which is cheaper than animating the background position.</p>
+                    </li>
+
+                    <li class="effect reveal">
+                        <div class="effect__demo demo-shapes" aria-hidden="true">
+                            <div class="demo-shapes__row">
+                                <span class="shape shape--star"></span>
+                                <span class="shape shape--circle"></span>
+                                <span class="shape shape--morph"></span>
+                            </div>
+                        </div>
+                        <h3 class="effect__title">Clip-path shapes</h3>
+                        <p class="effect__text"><code>clip-path</code> cuts an element to a polygon, a circle or an ellipse. The square turns into a diamond when you hover the tile. A box shadow would be clipped away, so a <code>drop-shadow</code> filter on the parent draws the shadow.</p>
+                    </li>
+
+                    <li class="effect reveal">
+                        <div class="effect__demo demo-mask">
+                            <img class="demo-mask__image demo-mask__image--fade" src="images/product-2.jpg" alt="A smartwatch photo that fades out at the bottom" width="800" height="600">
+                            <img class="demo-mask__image demo-mask__image--round" src="images/product-2.jpg" alt="" width="800" height="600">
+                        </div>
+                        <h3 class="effect__title">Image masking</h3>
+                        <p class="effect__text"><code>mask-image</code> with a gradient fades the left photo to nothing, and turns the right photo into a soft circle. No extra image files are needed.</p>
+                    </li>
+
+                    <li class="effect reveal">
+                        <div class="effect__demo demo-blend" aria-hidden="true">
+                            <span class="demo-blend__circle demo-blend__circle--one"></span>
+                            <span class="demo-blend__circle demo-blend__circle--two"></span>
+                            <span class="demo-blend__circle demo-blend__circle--three"></span>
+                        </div>
+                        <h3 class="effect__title">Blend modes</h3>
+                        <p class="effect__text"><code>mix-blend-mode</code> mixes the overlapping circles (two use <code>screen</code>, one uses <code>multiply</code>). <code>background-blend-mode</code> mixes the layers of the tile's own background, and <code>isolation</code> keeps the blending inside the tile.</p>
+                    </li>
+
+                    <li class="effect reveal">
+                        <div class="effect__demo demo-border-wrap" aria-hidden="true">
+                            <div class="demo-border">
+                                <div class="demo-border__inner">Animated border</div>
+                            </div>
+                        </div>
+                        <h3 class="effect__title">Animated border</h3>
+                        <p class="effect__text">A conic gradient behind the card turns with <code>transform</code>. The card covers the middle, so only a thin moving edge is visible.</p>
+                    </li>
+
+                    <li class="effect reveal">
+                        <div class="effect__demo demo-flip">
+                            <div class="flip">
+                                <button class="flip__button" type="button" aria-pressed="false">
+                                    <span class="flip__face flip__face--front">
+                                        <span class="flip__label">Front</span>
+                                        <span class="flip__hint">Hover, focus or press</span>
+                                    </span>
+                                    <span class="flip__face flip__face--back">
+                                        <span class="flip__label">Back</span>
+                                        <span class="flip__hint">This side was hidden until the card turned</span>
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                        <h3 class="effect__title">3D flip</h3>
+                        <p class="effect__text"><code>perspective</code>, <code>transform-style: preserve-3d</code> and <code>rotateY</code> turn the card, and <code>backface-visibility</code> hides the side that faces away. Use the mouse, the keyboard or a tap.</p>
+                    </li>
+
+                    <li class="effect reveal">
+                        <div class="effect__demo demo-filters">
+                            <ul class="swatches">
+                                <li class="swatch-item"><span class="swatch" aria-hidden="true"></span><span class="swatch__label">none</span></li>
+                                <li class="swatch-item"><span class="swatch swatch--hue" aria-hidden="true"></span><span class="swatch__label">hue</span></li>
+                                <li class="swatch-item"><span class="swatch swatch--saturate" aria-hidden="true"></span><span class="swatch__label">saturate</span></li>
+                                <li class="swatch-item"><span class="swatch swatch--gray" aria-hidden="true"></span><span class="swatch__label">gray</span></li>
+                                <li class="swatch-item"><span class="swatch swatch--contrast" aria-hidden="true"></span><span class="swatch__label">contrast</span></li>
+                            </ul>
+                        </div>
+                        <h3 class="effect__title">Filters</h3>
+                        <p class="effect__text">The same gradient with five filters: none, <code>hue-rotate</code>, <code>saturate</code>, <code>grayscale</code> and <code>contrast</code>.</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
     </main>
 
 </body>
